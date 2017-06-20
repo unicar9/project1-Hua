@@ -6,6 +6,7 @@
 #  name            :string
 #  email           :text
 #  password_digest :text
+#  image           :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
