@@ -16,6 +16,11 @@
 
 @import "materialize";
 
+  html, body, .my-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
   body {
     background-color: #384047;
   }
@@ -27,4 +32,12 @@
     padding: 0;
     margin: 0 auto;
     z-index: -1000;
+  }
+
+  .hero {
+    color: #fafafa;
+    padding-top: 190px;
+    background: linear-gradient(50deg, HSLA(205, 62%, 44%, 1), #F62D51);
+    width: 100%;
+    height: 100%;
   }

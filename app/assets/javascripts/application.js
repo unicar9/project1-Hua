@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jscolor
 //= require randomColor
 //= require materialize
 //= require_tree .

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   # before_action :check_if_admin, only: [:index]
 
   # before_action :check_if_logged_in, only: [:mixtape_create]
+  def welcome
+  end
 
   def get_user
     @user = User.find params['id']
