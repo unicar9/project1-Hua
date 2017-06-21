@@ -13,7 +13,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create user_params
+    @user = User.new user_params
+    image = "https://api.adorable.io/avatars/200/#{@user.email}"
+    @user.image = image  #give new user a generated avatar
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload params[:file]
+      @user.image = req['public_id']
+    end
+    @user.save
+
     if @user.id.present?
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)

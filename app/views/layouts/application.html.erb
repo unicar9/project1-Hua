@@ -3,12 +3,23 @@
   <head>
     <title>Project1</title>
     <%= csrf_meta_tags %>
+    <%= cloudinary_js_config %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <nav>
+      <% unless @current_user.present? %>
+        <%= link_to "Login", login_path %> |
+        <%= link_to "Signup", new_user_path %>
+      <% else %>
+        Welcome, <%= link_to @current_user.name, user_path(@current_user) %>  |
+        <%= link_to "Logout", login_path, :method => :delete %>
+      <% end %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

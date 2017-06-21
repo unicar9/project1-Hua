@@ -9,3 +9,9 @@
 User.destroy_all
 
 u1 = User.create name: 'unicar', email: 'carnival@yeah.net', password: 'chicken', image: 'https://api.adorable.io/avatars/285/carnival@yeah.png'
+
+Post.destroy_all
+
+p1 = Post.create image: 'http://fillmurray.com/400/300'
+
+u1.posts << p1

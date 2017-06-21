@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+<div class="">
+  <%= @post.image %>
+</div>
+<br>
+
+
+<h2><%= post.comments.count %> Comments</h2>
+
+<%= render @post.comments %>
+
+<h3>Add a Comment:</h3>
+
+<%= render 'comments/form' %>
+
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>

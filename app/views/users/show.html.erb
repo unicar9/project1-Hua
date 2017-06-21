@@ -7,3 +7,13 @@
 <p>Name: <%= @user.name %> </p>
 
 <img src="https://api.adorable.io/avatars/200/<%= @user.email %>" alt="">
+
+<ul>
+  <% @user.posts.each do |p| %>
+  <li>
+    <a href="<%= post_path(p) %>">
+      <img src="<%= p.image %>" alt="">
+    </a>
+  </li>
+  <% end %>
+</ul>
