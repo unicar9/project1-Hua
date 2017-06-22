@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require jscolor
 //= require randomColor
-//= require semantic-ui
 //= require_tree .
