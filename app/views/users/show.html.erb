@@ -1,6 +1,8 @@
 <h2>User Details</h2>
 
-<%= link_to_if @current_user == @user, '[Edit profile]', edit_user_path(@user) %>
+<% if @current_user == @user %>
+<%= link_to 'Edit profile', edit_user_path(@user) %>
+<% end %>
 
 <p>Email: <%= @user.email %> </p>
 

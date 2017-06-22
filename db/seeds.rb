@@ -8,7 +8,8 @@
 
 User.destroy_all
 
-u1 = User.create name: 'unicar', email: 'carnival@yeah.net', password: 'chicken', image: 'https://api.adorable.io/avatars/285/carnival@yeah.png'
+u1 = User.create name: 'unicar', email: 'carnival@yeah.net', password: 'chicken', image: 'https://api.adorable.io/avatars/285/carnival@yeah.png', is_admin: true
+u2 = User.create name: 'weijia', email: 'unicar9@gmail.com', password: 'chicken', image: 'https://api.adorable.io/avatars/285/unicar9@gmail.png'
 
 Post.destroy_all
 

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :check_if_logged_in, only: [:create, :destroy]
+  before_action :check_if_logged_in, only: [:new, :create, :destroy]
 
   def new
   end
@@ -10,14 +10,12 @@ class PostsController < ApplicationController
     if params[:image].present?
     # upload to Cloudinary
       res = Cloudinary::Uploader.upload(params[:image])
-
       p = Post.create user: @current_user, image: res["public_id"]
 
       redirect_to post_path( p )
     end
 
     # ???? error?
-
   end
 
   def index

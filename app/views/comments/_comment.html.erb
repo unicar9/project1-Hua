@@ -1,7 +1,7 @@
 <div class="ui comments">
   <div class="comment">
     <a class="avatar">
-      <img src="/images/avatar/small/matt.jpg">
+      <img src="<%= @avatar %>">
     </a>
     <div class="content">
       <a class="author">
@@ -15,11 +15,9 @@
       <div class="text">
         <%= comment.content %>
       </div>
+      <% if @current_user == @post.user %>
       <span><%= link_to 'Delete',[comment.post, comment], method: :delete, data:{confirm: 'Are you sure?'} %></span>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-
-<br>
