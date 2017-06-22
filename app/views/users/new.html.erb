@@ -1,11 +1,17 @@
-<h2>Create Account</h2>
+<h2 class="ui header">Create Account</h2>
 
 <% if @user.errors.any? %>
-<ol>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li> <%= msg %> </li>
-  <% end %>
-</ol>
+<div class="ui negative message">
+  <div class="header">
+    Something went wrong.
+  </div>
+  <ol class="list">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ol>
+</div>
+
 <% end %>
 
 <%= render partial: 'form' %>

@@ -1,18 +1,38 @@
-<h2>Login</h2>
 
-<% if flash[:error].present? %>
-  <p><strong><%= flash[:error] %></strong></p>
-<% end %>
+<div class="ui raised container segment">
+  <% if flash[:error].present? %>
+    <p><strong><%= flash[:error] %></strong></p>
+  <% end %>
 
-<%= form_tag login_path do %>
-  <%= label_tag 'Email' %>
-  <%= email_field_tag :email, nil %>
-  <br>
+<div class="ui two column middle aligned very relaxed stackable grid">
+  <div class="column">
 
-  <%= label_tag 'Password' %>
-  <%= password_field_tag :password, nil %>
-  <br>
+      <%= form_tag(login_path, class: "ui form") do %>
 
-  <%= submit_tag 'Login' %>
+        <div class="field">
+          <%= label_tag 'Email' %>
+          <%= email_field_tag :email, nil %>
+        </div>
 
-<% end %>
+        <div class="field">
+          <%= label_tag 'Password' %>
+          <%= password_field_tag :password, nil %>
+        </div>
+
+        <%= submit_tag 'Login', class: 'ui button teal' %>
+
+      <% end %>
+
+  </div>
+
+  <div class="center aligned column">
+    <a href="<%= new_user_path %>">
+      <div class="ui big orange labeled icon button">
+        <i class="signup icon"></i>
+        Sign Up
+      </div>
+    </a>
+  </div>
+</div>
+
+</div>

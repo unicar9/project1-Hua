@@ -209,17 +209,8 @@ $(document).ready(function() {
 
     $('#new_post').submit(function () {
 
-
       var dataurl = canvas.toDataURL('image/png');
       $('#image').val( dataurl );
-
-      // var blob = dataURLtoBlob(dataurl);
-  // debugger;
-
-      // var fd = new FormData();
-      // fd.append("myFile", blob, "thumb.jpg");
-
-
 
       console.log('GOT HERE');
 

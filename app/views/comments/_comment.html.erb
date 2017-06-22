@@ -1,5 +1,25 @@
-<%= comment.user_id %>
-<%= comment.content %>
-<%= time_ago_in_words(comment.created_at) %>
+<div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="/images/avatar/small/matt.jpg">
+    </a>
+    <div class="content">
+      <a class="author">
+        <%= comment.name %>
+      </a>
+      <div class="metadata">
+        <span class="date">
+          <%= time_ago_in_words(comment.created_at) %> ago
+        </span>
+      </div>
+      <div class="text">
+        <%= comment.content %>
+      </div>
+      <span><%= link_to 'Delete',[comment.post, comment], method: :delete, data:{confirm: 'Are you sure?'} %></span>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Delete',[comment.post,comment], method: :delete data: {confirm: 'Are you sure?'} %>
+
+
+<br>

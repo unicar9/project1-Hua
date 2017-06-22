@@ -1,12 +1,18 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<div class="ui reply form segment">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
 
-  <%= f.label :name %>
-  <br>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <br>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
 
-  <%= f.submit %>
 
-<% end %>
+    <%= f.submit class: 'ui teal button'%>
+
+  <% end %>
+</div>
