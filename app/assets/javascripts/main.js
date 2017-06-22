@@ -1,5 +1,5 @@
 var distanceBtw = function(point1, point2) {
-  return Math.sqrt((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2);
+  return Math.sqrt(Math.pow((point2.x - point1.x), 2) + Math.pow((point2.y - point1.y), 2));
 };
 
 var angleBtw = function(point1, point2) {
@@ -206,14 +206,6 @@ $(document).ready(function() {
 
     // ============================UPLOAD IMAGE=====================================
 
-    // function dataURLtoBlob(dataurl) {
-    // var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-    //     bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-    // while(n--){
-    //     u8arr[n] = bstr.charCodeAt(n);
-    // }
-    // return new Blob([u8arr], {type:mime});
-    // }
 
     $('#new_post').submit(function () {
 
