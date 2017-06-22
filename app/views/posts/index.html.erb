@@ -1,2 +1,9 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h2>Gallery</h2>
+
+<ul>
+  <% @posts.each do |p| %>
+    <li>
+      <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
+    </li>
+  <% end %>
+</ul>

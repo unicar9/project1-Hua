@@ -215,9 +215,23 @@ $(document).ready(function() {
     return new Blob([u8arr], {type:mime});
     }
 
-    var dataurl = canvas.toDataURL('image/png',0.8);
-    var blob = dataURLtoBlob(dataurl);
-    var fd = new FormData();
-    fd.append("myFile", blob, "thumb.jpg");
+    $('#new_post').submit(function () {
+
+
+      var dataurl = canvas.toDataURL('image/png');
+      $('#image').val( dataurl ); 
+
+      // var blob = dataURLtoBlob(dataurl);
+  // debugger;
+
+      // var fd = new FormData();
+      // fd.append("myFile", blob, "thumb.jpg");
+
+
+
+      console.log('GOT HERE');
+
+    });
+
 
 }); // end of .ready()

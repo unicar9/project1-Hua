@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.create(params[:comment].permit(:content))
-    @comment.user_id = current_user.id
+    @comment.user = @current_user
     @comment.save
 
     if @comment.save

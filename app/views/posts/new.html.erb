@@ -13,6 +13,17 @@
     <li><a id='circle'>CIRCLE</a></li>
   </ul>
 
+  <div class="ui compact menu">
+    <div class="ui simple dropdown item">
+      Dropdown
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item">BASIC</div>
+        <div class="item">TUBE</div>
+        <div class="item">CIRCLE</div>
+      </div>
+    </div>
+  </div>
   <!-- <div class="fixed-action-btn horizontal click-to-toggle">
     <a class="btn-floating btn-large red">
       <i class="material-icons">menu</i>
@@ -27,7 +38,20 @@
   </div> -->
 
 
+
+    <%= form_for Post.new, html: {multipart: true} do |f| %>
+
+    <%= f.label :file %>
+    <%#= f.cl_image_upload :image %>
+
+    <%= hidden_field_tag :image %>
+
+    <%= f.submit 'Save', id: 'submit_post' %>
+
+
   <canvas id="canvas" width="800" height="600">
   We're sorry, the browser you are using does not support <canvas>. Please upgrade your browser.
   <!-- Anything inside of the canvas tag will only display if the browser does not support the <canvas> tag.--> -->
   </canvas>
+
+  <% end %>

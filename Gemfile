@@ -34,7 +34,8 @@ gem 'rails_12factor'
 gem 'cloudinary'
 
 
-gem 'materialize-sass'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
 
 
 # Use Capistrano for deployment

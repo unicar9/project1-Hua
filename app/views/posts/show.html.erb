@@ -1,13 +1,13 @@
 
 <div class="">
-  <%= @post.image %>
+  <%= cl_image_tag @post.image %>
 </div>
 <br>
 
 
-<h2><%= post.comments.count %> Comments</h2>
+<h2><%#= post.comments.count %> Comments</h2>
 
-<%= render @post.comments %>
+<%#= render @post.comments %>
 
 <h3>Add a Comment:</h3>
 
