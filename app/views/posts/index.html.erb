@@ -1,18 +1,24 @@
-<h2>Gallery</h2>
+<div class="ui text container">
+  <h2>Gallery</h2>
+</div>
 
 <ul>
   <% @posts.each do |p| %>
-  <div class="ui three stackable cards">
     <li>
-      <div class="ui card">
-        <div class="image">
-          <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
-        </div>
-        <div class="content">
-          <p>Created by <%= p.user %></p>
+      <div class="ui container centered aligned">
+        <div class="ui three cards"></div>
+
+          <div class="ui card">
+            <div class="ui medium rounded image">
+              <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
+            </div>
+
+            <div class="content">
+              <h2>Created by <%= p.user.name %></h2>
+            </div>
+          </span>
         </div>
       </div>
     </li>
-  </div>
   <% end %>
 </ul>

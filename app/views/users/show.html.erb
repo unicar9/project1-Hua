@@ -1,21 +1,41 @@
-<h2>User Details</h2>
 
-<% if @current_user == @user %>
-<%= link_to 'Edit profile', edit_user_path(@user) %>
-<% end %>
 
-<p>Email: <%= @user.email %> </p>
-
-<p>Name: <%= @user.name %> </p>
-
-<img src="https://api.adorable.io/avatars/200/<%= @user.email %>" alt="">
+<div class="ui grid segment">
+  <div class="one column"></div>
+  <div class="five wide column">
+    <div class="ui small image circular">
+      <img src="https://api.adorable.io/avatars/200/<%= @user.email %>" alt="">
+    </div>
+  </div>
+  <div class="ten wide column">
+    <div class="ui header">
+      <h1>Name: <%= @user.name %> </h1>
+      <h3>Email: <%= @user.email %> </h3>
+    </div>
+    <% if @current_user == @user %>
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: 'ui button' %>
+    <%= link_to 'Start Drawing', new_post_path, class: 'ui button' %>
+    <% end %>
+  </div>
+</div>
 
 <ul>
   <% @user.posts.each do |p| %>
-  <li>
-    <a href="<%= post_path(p) %>">
-      <img src="<%= p.image %>" alt="">
-    </a>
-  </li>
+    <li>
+      <div class="ui container centered aligned">
+        <div class="ui three cards"></div>
+
+          <div class="ui centered card">
+            <div class="ui medium rounded image">
+              <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
+            </div>
+
+            <div class="content">
+              <h2>Created by <%= p.user.name %></h2>
+            </div>
+          </span>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>

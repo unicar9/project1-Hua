@@ -1,16 +1,26 @@
 
 <div class="ui container segment">
-  <%= cl_image_tag(@post.image, class: "ui centered image")  %>
+  <div class="image">
+    <%= cl_image_tag(@post.image, class: "ui centered rounded image")  %>
+  </div>
+  <div class="ui divider"></div>
 
-  <% if @current_user == @post.user %>
-  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end %>
+  <div class="ui two bottom attached buttons">
+    <% if @current_user == @post.user %>
+    <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: 'ui teal button' %>
+    <% end %>
 
+    <%= link_to "Start Drawing", new_post_path, class: 'ui orange button' %>
+  </div>
+</div>
+
+<div class="ui container segment">
    <h2 class="ui dividing header"><%= @post.comments.count %> Comments</h2>
 
   <%= render @post.comments %>
+</div>
 
+<div class="ui orange container segment">
   <h3>Add a Comment:</h3>
-
   <%= render 'comments/form' %>
 </div>

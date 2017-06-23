@@ -1,52 +1,51 @@
 
-<button class="jscolor {value:'66ccff'} waves-effect waves-light btn">Foreground color</button>
-  <a id="clear" class="waves-effect waves-light btn">CLEAR</a>
-  <a id="save" class="waves-effect waves-light btn">SAVE</a>
-  <a id="upload" class="waves-effect waves-light btn">UPLOAD</a>
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>BRUSH</a>
+<div class="ui grid">
+  <div class="six wide column"></div>
+  <div class="ten wide column">
+    <div class="ui container">
+      <button id='fgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button>
+      <button id='bgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button>
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a id='basic'>BASIC</a></li>
-    <li><a id='tube'>TUBE</a></li>
-    <li><a id='circle'>CIRCLE</a></li>
-  </ul>
-
-  <div class="ui compact menu">
-    <div class="ui simple dropdown item">
-      Dropdown
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <div class="item">BASIC</div>
-        <div class="item">TUBE</div>
-        <div class="item">CIRCLE</div>
+      <div class="ui compact menu">
+        <div class="ui simple dropdown item">
+          BRUSH
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div id='basic' class="item">BASIC</div>
+            <div id='tube' class="item">TUBE</div>
+            <div id='circle' class="item">CIRCLE</div>
+          </div>
+        </div>
       </div>
+
+      <div class="ui compact menu">
+        <div class="ui simple dropdown item">
+          SIZE
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div id='small' class="item">SMALL</div>
+            <div id='medium' class="item">MEDIUM</div>
+            <div id='large' class="item">LARGE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui small basic icon buttons">
+        <button id="clear" class="ui button"><i class="trash outline icon"></i></button>
+        <button id="save" class="ui button"><i class="save icon"></i></button>
+        <!-- <button class="ui button"><i class="upload icon"></i></button> -->
+        <%= form_for Post.new, html: {multipart: true} do |f| %>
+        <%= f.label :file %>
+        <%#= f.cl_image_upload :image %>
+        <%= hidden_field_tag :image %>
+
+        <%= f.submit 'UPLOAD', id: 'submit_post', class: 'ui button' %>
+      </div>
+
     </div>
   </div>
-  <!-- <div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large red">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">color_lens</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">file_download</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">clear</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">brush</i></a></li>
-    </ul>
-  </div> -->
+</div>
 
-
-
-    <%= form_for Post.new, html: {multipart: true} do |f| %>
-
-    <%= f.label :file %>
-    <%#= f.cl_image_upload :image %>
-
-    <%= hidden_field_tag :image %>
-
-    <%= f.submit 'Save', id: 'submit_post' %>
 
 
   <canvas id="canvas" width="800" height="600">

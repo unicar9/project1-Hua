@@ -39,7 +39,14 @@ $(document).ready(function() {
 
   $clear.click(function() {
     clearCanvas();
+    fillBackground();
   }); // Clears the canvas
+
+  function fillBackground() {
+    var bgcolor = randomColor({hue: 'monochrome'});
+    context.fillStyle = bgcolor;
+    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+  };
 
 
   $save.click(function() {
@@ -54,14 +61,17 @@ $(document).ready(function() {
   $basic.click(function() {
     brushMode = 'basic';
     clearCanvas();
+    fillBackground();
   });
   $tube.click(function() {
     brushMode = 'tube';
     clearCanvas();
+    fillBackground();
   });
   $circle.click(function() {
     brushMode = 'circle';
     clearCanvas();
+    fillBackground();
   });
 
 
@@ -87,10 +97,13 @@ $(document).ready(function() {
         context.beginPath();
         context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
         context.lineTo(e.offsetX, e.offsetY);
-        var color = randomColor({luminosity: 'light', hue: 'blue'});
+        var color = randomColor({
+                       luminosity: 'light',
+                       format: 'hsla' // e.g. 'hsla(27, 88.99%, 81.83%, 0.6450211517512798)'
+                    });
         context.strokeStyle = color;
         context.stroke();
-        context.lineWidth = 4;
+        context.lineWidth = 15;
         lastEvent = e;
     }
     }).mouseup(function() {
@@ -107,9 +120,11 @@ $(document).ready(function() {
       if (brushMode !== "tube") {
         return;
       }
-
       isDrawing = true;
       lastPoint = {x: e.offsetX, y: e.offsetY};
+      context.strokeStyle = randomColor({hue: 'blue'});
+      context.fillStyle = randomColor({luminosity: 'light'});
+      context.lineWidth = 1;
     }).mousemove(function(e) {
         if (brushMode !== "tube") {
           return;
@@ -170,6 +185,7 @@ $(document).ready(function() {
       points.push({x: e.offsetX, y: e.offsetY, radius: getRandomInt(10, 30), opacity: Math.random()});
       // var color = randomColor();
 
+
     }).mousemove(function(e) {
       if (brushMode !== "circle") {
         return;
@@ -187,7 +203,7 @@ $(document).ready(function() {
           // draw a circle
           context.arc(points[i].x, points[i].y, points[i].radius, false, Math.PI * 2, false);
 
-          // context.fillStyle = color;
+          context.fillStyle = color;
           // debugger;
           context.fill();
           context.globalAlpha = points[i].opacity;
