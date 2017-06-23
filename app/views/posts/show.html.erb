@@ -10,7 +10,7 @@
     <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: 'ui teal button' %>
     <% end %>
 
-    <%= link_to "Start Drawing", new_post_path, class: 'ui orange button' %>
+    <%= link_to "Start Drawing", new_post_path, class: 'ui pink button' %>
   </div>
 </div>
 
@@ -20,7 +20,7 @@
   <%= render @post.comments %>
 </div>
 
-<div class="ui orange container segment">
+<div class="ui pink container segment">
   <h3>Add a Comment:</h3>
   <%= render 'comments/form' %>
 </div>
