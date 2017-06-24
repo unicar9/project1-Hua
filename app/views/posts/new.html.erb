@@ -1,56 +1,44 @@
 
-<div class="ui grid">
-  <div class="six wide column"></div>
-  <div class="ten wide column">
-    <div class="ui container">
-      <button id='fgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button>
-      <button id='bgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button>
+      <!-- <button id='fgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button>
+      <button id='bgcolor' class="jscolor {valueElement:null,value:'66ccff'} ui icon button circular" onchange="update(this.jscolor)"></button> -->
 
-      <div class="ui compact menu">
-        <div class="ui simple dropdown item">
-          BRUSH
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div id='basic' class="item">BASIC</div>
-            <div id='tube' class="item">TUBE</div>
-            <div id='circle' class="item">CIRCLE</div>
-          </div>
-        </div>
+
+<div class="ui two column centered grid">
+  <div class="ui buttons">
+    <div class="teal ui dropdown button">
+      <div class="text">BRUSH</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div id='basic' class="item">Basic</div>
+        <div id='tube' class="item">Tube</div>
+        <div id='circle' class="item">Circle</div>
       </div>
-
-      <div class="ui compact menu">
-        <div class="ui simple dropdown item">
-          SIZE
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div id='small' class="item">SMALL</div>
-            <div id='medium' class="item">MEDIUM</div>
-            <div id='large' class="item">LARGE</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui small basic icon buttons">
-        <button id="clear" class="ui button"><i class="trash outline icon"></i></button>
-        <button id="save" class="ui button"><i class="save icon"></i></button>
-        <!-- <button class="ui button"><i class="upload icon"></i></button> -->
-        <%= form_for Post.new, html: {multipart: true} do |f| %>
-        <%= f.label :file %>
-        <%#= f.cl_image_upload :image %>
-        <%= hidden_field_tag :image %>
-
-        <%= f.submit 'UPLOAD', id: 'submit_post', class: 'ui button' %>
-      </div>
-
     </div>
+
+    <div class="teal ui dropdown button">
+      <div class="text">SIZE</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div id="sm" class="item">Small</div>
+        <div id='md' class="item">Medium</div>
+        <div id='lg' class="item">Large</div>
+      </div>
+    </div>
+
+    <div id="clear" class="pink ui button">CLEAR</div>
+    <div id="save" class="pink ui button">SAVE</div>
+
+    <%= form_for Post.new, html: {multipart: true} do |f| %>
+    <%= f.label :file %>
+    <%#= f.cl_image_upload :image %>
+    <%= hidden_field_tag :image %>
+    <%= f.submit 'UPLOAD', id: 'submit_post', class: 'pink ui button' %>
+    <% end %>
   </div>
+
 </div>
 
-
-
-  <canvas id="canvas" width="800" height="600">
-  We're sorry, the browser you are using does not support <canvas>. Please upgrade your browser.
-  <!-- Anything inside of the canvas tag will only display if the browser does not support the <canvas> tag.--> -->
-  </canvas>
-
-  <% end %>
+<canvas id="canvas" width="800" height="600">
+We're sorry, the browser you are using does not support <canvas>. Please upgrade your browser.
+<!-- Anything inside of the canvas tag will only display if the browser does not support the <canvas> tag.--> -->
+</canvas>

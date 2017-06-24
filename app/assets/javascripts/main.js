@@ -16,6 +16,9 @@ var brushMode = 'basic';
 
 $(document).ready(function() {
 
+  $('.ui.dropdown')
+  .dropdown(); //Initializing dropdown menu
+
 
   var $canvas = $("canvas");
   //Select the first, only canvas element. Select the actual HTML element using the array syntax [index], get the 2d context.

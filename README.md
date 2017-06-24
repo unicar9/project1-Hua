@@ -1,24 +1,38 @@
-# README
+# Project#1 - Hua
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can experience the whole site in [here](https://hua-project.herokuapp.com/). Register, start drawing and have fun! Also, don't forget to upload your awesome work!
 
-Things you may want to cover:
+All comments and suggestions are welcome!
 
-* Ruby version
+![screenshot](http://i.imgur.com/r151Hv7.png)
 
-* System dependencies
+## Overview
 
-* Configuration
+As required, I made this simple tic tac toe game as my first individual project. It's built with html, css and javascript/**jQuery**.
 
-* Database creation
 
-* Database initialization
+## Features
 
-* How to run the test suite
+- Players can toggle between **Versus Mode** and **VS Computer Mode** on 3x3 grid
 
-* Services (job queues, cache servers, search engines, etc.)
+- Beat-me-if-you-can AI
 
-* Deployment instructions
+- Players can toggle between 3x3 or 4x4 grid
 
-* ...
+- Players can choose between 2 token pairs
+
+- Support local storage
+
+___
+
+## Acknowledgments
+
+- I used [animate.css](https://github.com/daneden/animate.css) library during the process, it's an easy-to-use library of CSS animations!
+
+- I used [Font Awesome](http://fontawesome.io/) to search for icons.
+
+- I found my color palette for this game on [Coolors](https://coolors.co/).
+
+- I found my cute sushi tokens on [freepik](http://www.freepik.com/).
+
+- I've felt grateful for all the help I got from Luke & Matt and all my classmates along the way in WDI22, Sydney,  [GA](https://generalassemb.ly/).
