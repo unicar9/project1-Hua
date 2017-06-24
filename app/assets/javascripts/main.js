@@ -20,6 +20,7 @@ $(document).ready(function() {
   var $canvas = $("canvas");
   //Select the first, only canvas element. Select the actual HTML element using the array syntax [index], get the 2d context.
   var context = $canvas[0].getContext("2d");
+  fillBackground();
   // var lastEvent;
   var isDrawing = false;
 
@@ -28,8 +29,8 @@ $(document).ready(function() {
   var points = [];
   var radius = 15;
   context.lineJoin = context.lineCap = 'round';
-  context.fillStyle = "red";
-  context.strokeStyle = "grey";
+  // context.fillStyle = "red";
+  // context.strokeStyle = "grey";
   var $clear = $("#clear");
   var $save = $("#save");
 

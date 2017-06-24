@@ -1,6 +1,6 @@
 
 
-<div class="ui grid segment">
+<div class="ui grid container raised segment">
   <div class="one column"></div>
   <div class="five wide column">
     <div class="ui small image circular">
@@ -19,23 +19,25 @@
   </div>
 </div>
 
-<ul>
-  <% @user.posts.each do |p| %>
-    <li>
-      <div class="ui container centered aligned">
-        <div class="ui three cards"></div>
+<div class="ui relaxed stackable grid container">
+  <div class="doubling four column row">
+    <% @user.posts.each do |p| %>
+      <div class="column">
+        <div class="ui centered card">
 
-          <div class="ui centered card">
-            <div class="ui medium rounded image">
-              <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
-            </div>
+          <div class="ui image">
+            <%= link_to cl_image_tag(p.image, :width=>400, :height=>300, :crop=>"scale", :secure=>true), post_path( p )%>
+          </div>
 
-            <div class="content">
-              <h2>Created by <%= p.user.name %></h2>
-            </div>
-          </span>
+          <div class="content">
+            <h3>Created by <%= p.user.name %></h3>
+          </div>
+
         </div>
+
+        <div class="ui container"></div>
+
       </div>
-    </li>
-  <% end %>
-</ul>
+    <% end %>
+  </div>
+</div>
