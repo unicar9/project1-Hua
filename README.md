@@ -6,9 +6,14 @@ All comments and suggestions are welcome!
 
 ![screenshot](http://i.imgur.com/r151Hv7.png)
 
+
 ## Overview
 
-As required, I made this simple tic tac toe game as my first individual project. It's built with html, css and javascript/**jQuery**.
+In this project, I proposed a **Ruby on Rails** application with online drawing as its core function. It's more of an experimental drawing tool where users can choose among 3 different brushes and draw with random generated colors.
+
+The project name, _Hua_(画), is the literal meaning of drawing in Chinese.
+
+I used HTML, CSS and JavaScript/jQuery for the front-end part, and it's also my first experiment with **HTML5 Canvas** technology.   
 
 
 ## Features
@@ -27,9 +32,9 @@ ___
 
 ## Acknowledgments
 
-- I used [animate.css](https://github.com/daneden/animate.css) library during the process, it's an easy-to-use library of CSS animations!
+- I used [Semantic UI](https://semantic-ui.com/) as my front-end framework for this project.
 
-- I used [Font Awesome](http://fontawesome.io/) to search for icons.
+- I used [randomColor.js](https://github.com/davidmerfield/randomColor) to generate aesthetically pleasing random colors for my drawing app.
 
 - I found my color palette for this game on [Coolors](https://coolors.co/).
 
