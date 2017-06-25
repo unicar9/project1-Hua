@@ -4,7 +4,9 @@ You can experience the whole site in [here](https://hua-project.herokuapp.com/).
 
 All comments and suggestions are welcome!
 
-![screenshot](http://i.imgur.com/r151Hv7.png)
+![screenshot](http://i.imgur.com/5MHeYkz.png)
+
+![screenshot](http://i.imgur.com/lSdq72Z.png)
 
 
 ## Overview
