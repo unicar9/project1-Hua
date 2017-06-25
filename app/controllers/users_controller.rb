@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, only: [:edit, :update]
 
   def welcome
+
   end
 
   def get_user

@@ -57,6 +57,24 @@ $(document).ready(function() {
     window.location = canvas.toDataURL("image/png");
   }); // save the image to computer
 
+  //===========================brush size & click functions=======================
+
+  var $sm = $("#sm");
+  var $md = $("#md");
+  var $lg = $("#lg");
+  var $brushSize = $("#brushSize");
+  var size = 5; //default size
+
+  $sm.click(function() {
+    size = 5;
+  });
+  $md.click(function() {
+    size = 15;
+  });
+  $lg.click(function() {
+    size = 25;
+  });
+
 // ================================brush mode ======================
   var $basic = $("#basic");
   var $tube = $("#tube");
@@ -66,16 +84,19 @@ $(document).ready(function() {
     brushMode = 'basic';
     clearCanvas();
     fillBackground();
+    $brushSize.show();
   });
   $tube.click(function() {
     brushMode = 'tube';
     clearCanvas();
     fillBackground();
+    $brushSize.hide();
   });
   $circle.click(function() {
     brushMode = 'circle';
     clearCanvas();
     fillBackground();
+    $brushSize.hide();
   });
 
 
@@ -107,7 +128,7 @@ $(document).ready(function() {
                     });
         context.strokeStyle = color;
         context.stroke();
-        context.lineWidth = 15;
+        context.lineWidth = size;
         lastEvent = e;
     }
     }).mouseup(function() {
@@ -160,25 +181,6 @@ $(document).ready(function() {
         $canvas.mouseup();
     });
 
-//
-// .on('mousemove', function(e){
-//
-//   switch( brushMode ){
-//   case 'circle':
-//     drawCircle(e);
-//     break;
-//   case 'tube':
-//     drawTube(e);
-//     break;
-//   case 'basic':
-//     drawBasic(e);
-//     break;
-//
-//   }
-//
-// });
-
-
 // ========================== CIRCLE BRUSH=======================
 
     $canvas.mousedown(function(e) {
@@ -201,8 +203,6 @@ $(document).ready(function() {
 
         for (var i = 0; i < points.length; i++) {
           context.beginPath();
-
-          // context.fillStyle = 'rgba(255, ' + Math.floor(Math.random()*255) + ', 0, 0.2)';  //color;
 
           // draw a circle
           context.arc(points[i].x, points[i].y, points[i].radius, false, Math.PI * 2, false);

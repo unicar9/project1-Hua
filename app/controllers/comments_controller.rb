@@ -10,13 +10,13 @@ class CommentsController < ApplicationController
 
     if params[:comment][:name].present?
       @comment.name = params[:comment][:name]
-      @avatar = "https://api.adorable.io/avatars/100/#{@comment.name}"
+      @comment.avatar = "https://api.adorable.io/avatars/100/#{@comment.name}"
     elsif @current_user.present?
       @comment.name = @current_user.name
-      @avatar = @current_user.image
+      @comment.avatar = @current_user.image
     else
       @comment.name = "Anonymous"
-      @avatar = "https://api.adorable.io/avatars/100/anonymous.png"
+      @comment.avatar = "https://api.adorable.io/avatars/100/anonymous.png"
     end
 
     @comment.save

@@ -10,15 +10,25 @@
   </head>
 
   <body>
-    <div class="right item"></div>
-      <% unless @current_user.present? %>
-        <%= link_to "Login", login_path, class: 'ui inverted button' %> |
-        <%= link_to "Signup", new_user_path, class: 'ui inverted button' %>
-      <% else %>
-        Welcome, <%= link_to @current_user.name, user_path(@current_user) %>  |
-        <%= link_to "Logout", login_path, :method => :delete, class: 'ui inverted button' %>
-      <% end %>
+    <div class="ui container">
+      <div class="ui secondary menu">
+        <%= link_to "Gallery", posts_path, class: 'ui pink basic button item' %>
+        <div class="right menu">
+          <% unless @current_user.present? %>
+            <%= link_to "Login", login_path, class: 'ui teal basic button item' %>
+            <%= link_to "Signup", new_user_path, class: 'ui teal basic button item' %>
+          <% else %>
+          <div class="item">
+            Welcome, <%= link_to @current_user.name, user_path(@current_user) %>
+          </div>
+            <%= link_to "Logout", login_path, :method => :delete, class: 'ui teal basic button item' %>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+
+
 
     <%= yield %>
   </body>
