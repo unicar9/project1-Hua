@@ -1,7 +1,7 @@
 <div class="ui comments">
   <div class="comment">
     <a class="avatar">
-      <img src="<%= comment.avatar %>">
+        <%= cl_image_tag(comment.avatar, :width=>300, :height=>300, :crop=>"crop", :gravity=>"face", :secure=>true)%>
     </a>
     <div class="content">
       <a class="author">

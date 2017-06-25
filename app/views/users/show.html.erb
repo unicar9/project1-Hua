@@ -4,7 +4,7 @@
   <div class="one column"></div>
   <div class="five wide column">
     <div class="ui small image circular">
-      <%= link_to cl_image_tag(@user.image, :width=>300, :height=>300, :crop=>"scale", :secure=>true)%>
+      <%= link_to cl_image_tag(@user.image, :width=>300, :height=>300, :crop=>"crop", :gravity=>"face", :secure=>true)%>
     </div>
   </div>
   <div class="ten wide column">
@@ -30,7 +30,7 @@
           </div>
 
           <div class="content">
-            <h3>Created by <%= p.user.name %></h3>
+            <h3>Created by <%= link_to p.user.name, user_path(p.user) %></h3>
           </div>
 
         </div>
