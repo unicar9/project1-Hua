@@ -4,7 +4,7 @@
   <div class="one column"></div>
   <div class="five wide column">
     <div class="ui small image circular">
-      <img src="https://api.adorable.io/avatars/200/<%= @user.email %>" alt="">
+      <%= link_to cl_image_tag(@user.image, :width=>300, :height=>300, :crop=>"scale", :secure=>true)%>
     </div>
   </div>
   <div class="ten wide column">
