@@ -50,6 +50,12 @@ class UsersController < ApplicationController
     @user = @current_user
     @user.update user_params
     redirect_to user_path(params['id'])
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload params[:file]
+      @user.image = req['public_id']
+    end
+    @user.save
   end
 
   private
